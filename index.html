@@ -16,6 +16,7 @@
     --plum-soft:#6C3552;
     --clay:#BD5B2C;
     --clay-dark:#9C4A23;
+    --clay-deeper:#8E4220;
     --ink:#2B2119;
     --cream:#FBF7EF;
     --line:#DACBA3;
@@ -82,8 +83,8 @@
     cursor:pointer;
     transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .btn-clay{background:var(--clay);color:var(--cream);}
-  .btn-clay:hover{background:var(--clay-dark);transform:translateY(-1px);}
+  .btn-clay{background:var(--clay-dark);color:var(--cream);}
+  .btn-clay:hover{background:var(--clay-deeper);transform:translateY(-1px);}
   .btn-outline{background:transparent;color:var(--cream);border-color:var(--line-dark);}
   .btn-outline:hover{background:rgba(251,247,239,0.1);}
   .btn-outline-ink{background:transparent;color:var(--ink);border-color:var(--line);}
@@ -145,7 +146,7 @@
 
   .kicker{
     font-family:'Lora',serif;font-style:italic;font-weight:500;
-    font-size:15.5px;color:var(--clay);margin-bottom:10px;display:block;
+    font-size:15.5px;color:var(--clay-dark);margin-bottom:10px;display:block;
   }
   .band-plum .kicker{color:#E3A87C;}
 
@@ -167,6 +168,10 @@
   .body-copy p{margin:0 0 18px 0;max-width:64ch;}
   .body-copy p:last-child{margin-bottom:0;}
   .band-plum .body-copy p{color:rgba(251,247,239,0.86);}
+  /* ...but a cream card inside the plum band needs dark copy again, or the
+     text is cream on cream and vanishes. This is what hid Sadie's letter. */
+  .note-card .body-copy p,
+  .band-plum .note-card .body-copy p{color:#4a3c30;}
 
   /* ---------- two column ---------- */
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
