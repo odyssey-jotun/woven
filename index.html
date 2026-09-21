@@ -14,6 +14,9 @@
     --flax-deep:#ECDFBE;
     --plum:#48213A;
     --plum-soft:#6C3552;
+    --berry:#9B3A55;
+    --berry-dark:#84304A;
+    --sage:#7C8A66;
     --clay:#BD5B2C;
     --clay-dark:#9C4A23;
     --clay-deeper:#8E4220;
@@ -83,8 +86,8 @@
     cursor:pointer;
     transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .btn-clay{background:var(--clay-dark);color:var(--cream);}
-  .btn-clay:hover{background:var(--clay-deeper);transform:translateY(-1px);}
+  .btn-clay{background:var(--berry);color:var(--cream);}
+  .btn-clay:hover{background:var(--berry-dark);transform:translateY(-1px);}
   .btn-outline{background:transparent;color:var(--cream);border-color:var(--line-dark);}
   .btn-outline:hover{background:rgba(251,247,239,0.1);}
   .btn-outline-ink{background:transparent;color:var(--ink);border-color:var(--line);}
@@ -94,13 +97,13 @@
   .hero{padding-top:64px;padding-bottom:70px;}
   .hero .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;}
   @media(max-width:900px){ .hero .grid{grid-template-columns:1fr;gap:40px;} }
-  .eyebrow-plain{font-size:14.5px;color:var(--plum-soft);font-weight:600;margin-bottom:14px;}
+  .eyebrow-plain{font-size:14.5px;color:var(--berry);font-weight:600;margin-bottom:14px;}
   .hero h1{font-size:44px;letter-spacing:-.01em;}
   @media(max-width:900px){ .hero h1{font-size:34px;} }
   .hero p.lede{margin-top:20px;font-size:18.5px;color:#4a3c30;max-width:46ch;}
   .hero-form{margin-top:30px;}
   .hero-visual{position:relative;}
-  .hero-visual img{border-radius:18px;box-shadow:0 20px 50px -22px rgba(43,33,25,.35);}
+  .hero-visual img{border-radius:18px;border:3px solid var(--sage);box-shadow:0 20px 50px -22px rgba(43,33,25,.35);}
   .hero-visual figcaption{
     margin-top:10px;font-size:13.5px;color:#6b5c4b;font-style:italic;
   }
@@ -146,7 +149,7 @@
 
   .kicker{
     font-family:'Lora',serif;font-style:italic;font-weight:500;
-    font-size:15.5px;color:var(--clay-dark);margin-bottom:10px;display:block;
+    font-size:15.5px;color:var(--berry);margin-bottom:10px;display:block;
   }
   .band-plum .kicker{color:#E3A87C;}
 
@@ -186,6 +189,10 @@
   blockquote{
     margin:0;background:var(--cream);border-radius:14px;padding:26px 24px;
     border:1px solid var(--line);
+  }
+  blockquote::before{
+    content:"\201C";display:block;font-family:'Lora',serif;font-size:46px;
+    line-height:.7;color:var(--sage);margin-bottom:10px;
   }
   blockquote p{
     font-family:'Lora',serif;font-style:italic;font-size:18px;color:var(--plum);margin:0;
@@ -253,9 +260,9 @@
 <section class="hero" id="hero">
   <div class="wrap grid">
     <div>
-      <span class="eyebrow-plain fade-in">A sustainable blouse project, made with Dorcas House</span>
-      <h1 class="fade-in d2">Clothing Designed Around the Women Who Will Wear It</h1>
-      <p class="lede fade-in d3">Woven is a sustainable blouse project created with women at Little Rock's Dorcas House. The design was shaped by direct feedback about fit, coverage, color, comfort, sizing, and where the blouse would actually be worn.</p>
+      <span class="eyebrow-plain fade-in">Thoughtful Clothing, Made with Purpose</span>
+      <h1 class="fade-in d2">Clothing Designed With the Women Who Will Wear It</h1>
+      <p class="lede fade-in d3">Woven is a sustainable blouse project created in partnership with women at Little Rock's Dorcas House. Their voices shape every detail from fit, coverage, color, comfort, and sizing, creating a blouse that builds confidence.</p>
 
       <form class="hero-form email-form fade-in d3" id="hero-form">
         <input type="email" required placeholder="Enter your email address" aria-label="Email address">
@@ -265,11 +272,11 @@
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#48213A"/><path d="M6 10.5L8.5 13L14 7" stroke="#FBF7EF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         You're on the list. We'll email you as sizing and colors are finalized.
       </div>
-      <p class="email-note">Enter an email address to reserve a Woven blouse and receive updates on sizing, colors, availability, and production.</p>
+      <p class="email-note">Enter your email address to reserve a Woven blouse and receive updates on sizing, colors, availability, and production.</p>
     </div>
     <figure class="hero-visual">
       <img src="assets/hemp-blouse-concept.jpg" alt="Early concept photography for the Woven hemp blouse, shown from four angles">
-      <figcaption>Design concept, built from the survey results below. Final samples are still in production.</figcaption>
+      <figcaption>Design concept inspired by feedback from the women of Dorcas House. Final samples are currently in production.</figcaption>
     </figure>
   </div>
 </section>
@@ -280,40 +287,40 @@
   <div class="wrap">
     <span class="kicker">Why this exists</span>
     <h2 class="section-title">Fast Fashion Creates a Clothing Problem</h2>
-    <p class="section-lede">The fashion industry produces far more clothing than people ultimately use. Textile production has nearly doubled since 2000, while textile waste in the United States has risen dramatically.<sup>[1]</sup> Much of that clothing never returns to meaningful use.</p>
+    <p class="section-lede">The fashion industry produces far more clothing than people ultimately use. As production has grown, so has textile waste. Textile production has nearly doubled since 2000, while textile waste in the United States has risen dramatically.<sup>[1]</sup> Much of that clothing never returns to meaningful use.</p>
 
     <div class="stat-strip">
       <div class="stat">
         <div class="num">92M Tons</div>
-        <div class="label">An estimated 92 million tons of textile waste are generated globally each year.</div>
+        <div class="label">Of textile waste are generated globally.</div>
       </div>
       <div class="stat">
         <div class="num">85%</div>
-        <div class="label">Is never recovered. Only about 15% of discarded textiles in the U.S. are recycled or donated; most are landfilled or incinerated.<sup>[1]</sup></div>
+        <div class="label">Of discarded textiles in the United States are not recycled or donated.<sup>[1]</sup></div>
       </div>
       <div class="stat">
         <div class="num">2.5–5B</div>
-        <div class="label">Unsold garments the fast-fashion industry is estimated to have produced in 2023 alone.</div>
+        <div class="label">Unsold garments were estimated to have been produced in 2023 alone.</div>
       </div>
     </div>
 
     <div class="body-copy" style="margin-top:40px;">
       <p>The problem extends beyond waste. Clothing is also a basic expense that becomes difficult to prioritize when families are already balancing housing, food, transportation, healthcare, and childcare.</p>
-      <p>In Pulaski County, 15% of residents live below the poverty line, while another 27% fall into the ALICE category: Asset Limited, Income Constrained, Employed.<sup>[3]</sup> Dorcas House works directly with women navigating many of those pressures.</p>
+      <p>In Pulaski County, 15% of residents live below the poverty line, while another 27% fall into the ALICE category: Asset Limited, Income Constrained, Employed.<sup>[3]</sup> Dorcas House works directly with women navigating many of these challenges.</p>
     </div>
   </div>
 </section>
 
 <section id="the-design">
   <div class="wrap">
-    <span class="kicker">The research</span>
-    <h2 class="section-title">The Design Came From the Women Themselves</h2>
-    <p class="section-lede">Nineteen women at Dorcas House completed a survey about what they actually wanted in a blouse. The answers were specific.</p>
+    <span class="kicker">Our Research</span>
+    <h2 class="section-title">Designed With the Women Who Will Wear It</h2>
+    <p class="section-lede">Nineteen women at Dorcas House shared what they wanted most in a blouse. Their feedback directly shaped our design.</p>
 
     <div class="stat-strip">
       <div class="stat">
         <div class="num">84%</div>
-        <div class="label">Wanted a slip-on design, a blouse they could pull over their head rather than a button-front style.</div>
+        <div class="label">Preferred a slip-on design, a blouse they could pull over their head rather than a button-front style.</div>
       </div>
       <div class="stat">
         <div class="num">79%</div>
@@ -321,13 +328,13 @@
       </div>
       <div class="stat">
         <div class="num">63%</div>
-        <div class="label">Preferred a flowy fit, a looser silhouette over a structured or boxy one.</div>
+        <div class="label">Preferred a flowy, relaxed fit over a structured or boxy silhouette.</div>
       </div>
     </div>
 
     <div class="body-copy" style="margin-top:40px;">
-      <p>The remaining responses helped refine the design further. Fifty-eight percent preferred a longer, tunic-style blouse, while 63% preferred short sleeves. Color preferences were nearly evenly divided between neutrals, earth tones, and blue, green, or navy.</p>
-      <p>The survey did not point toward one imposed style. It pointed toward a blouse flexible enough to reflect different women, different bodies, and different preferences. Sizes among respondents ranged from XS through XXL, reinforcing the need for inclusive sizing.</p>
+      <p>Their feedback helped shape the details too. Fifty-eight percent preferred a longer, tunic-style blouse, while 63% preferred short sleeves. Color preferences were nearly evenly divided among neutrals, earth tones, and shades of blue, green, and navy.</p>
+      <p>The result is a blouse designed to work for different women, different body types, and different preferences, with a focus on inclusive sizing from XS through XXL.</p>
     </div>
   </div>
 </section>
@@ -337,16 +344,17 @@
 <section class="band-flaxdeep" id="occasions">
   <div class="wrap two-col">
     <div>
-      <span class="kicker">Where it's worn</span>
-      <h2 class="section-title">Made for More Than One Occasion</h2>
+      <span class="kicker">For Real Life</span>
+      <h2 class="section-title">One Blouse, Many Places</h2>
       <div class="body-copy" style="margin-top:18px;">
-        <p>The women were also asked where they hoped to wear the blouse. Church appeared most often. Other answers included job interviews, work, birthday parties, community events, casual outings, traveling, and everyday wear. Several respondents simply answered "anywhere" or "everywhere."</p>
-        <p>The blouse needed to function as a real piece of clothing rather than a symbolic donation.</p>
+        <p>The women were also asked where they hoped to wear the blouse. Church was the most common answer, but their responses went beyond that: job interviews, work, birthday parties, community events, casual outings, traveling, and everyday life. Several simply said "anywhere" or "everywhere."</p>
+        <p>Their answers made it clear: they wanted a blouse that could move with them through everyday life.</p>
+        <p>We also asked the women how having the right clothing makes them feel. Their answers spoke to something deeper than simply getting dressed.</p>
       </div>
       <div class="quote-grid">
-        <blockquote><p>"Comfortable in my skin."</p><cite>Dorcas House survey respondent</cite></blockquote>
-        <blockquote><p>"It was almost as though I could wear it all day."</p><cite>Dorcas House survey respondent</cite></blockquote>
-        <blockquote><p>"I felt comfortable and looked nice."</p><cite>Dorcas House survey respondent</cite></blockquote>
+        <blockquote><p>"Comfortable in my skin."</p><cite>Dorcas House survey resident</cite></blockquote>
+        <blockquote><p>"It was almost as though I could wear it all day."</p><cite>Dorcas House survey resident</cite></blockquote>
+        <blockquote><p>"I felt comfortable and looked nice."</p><cite>Dorcas House survey resident</cite></blockquote>
       </div>
     </div>
     <div class="col-img">
@@ -357,30 +365,30 @@
 
 <section id="material">
   <div class="wrap" style="max-width:760px;">
-    <span class="kicker">Materials</span>
-    <h2 class="section-title">Why Hemp?</h2>
+    <span class="kicker">The Blend Matters</span>
+    <h2 class="section-title">Why Hemp Makes Sense</h2>
     <div class="body-copy" style="margin-top:18px;">
-      <p>Material choice affects both comfort and longevity. Research published in <em>Materials</em> found that hemp-linen fabrics can provide durability along with strong air permeability and moisture management. Hemp fibers are also breathable and biodegradable.<sup>[5]</sup></p>
-      <p>Woven treats hemp and hemp-linen as preferred materials where practical. The goal is to create clothing that lasts longer, feels comfortable, and avoids some of the waste associated with disposable fashion.</p>
+      <p>What clothing is made from matters, both in how it feels and how long it lasts. Research published in <em>Materials</em> found that hemp-linen blend fabrics provide durability along with strong air permeability and moisture management. Hemp fibers are also breathable and biodegradable.<sup>[5]</sup></p>
+      <p>For Woven, hemp and hemp blends are preferred whenever practical. They allow us to create clothing that lasts longer, feels comfortable, and avoids some of the waste associated with disposable fashion. Hemp helps tackle textile waste from both ends. Its durability means it can be worn longer and even passed down rather than quickly replaced. And if it does reach a landfill, hemp is biodegradable.</p>
     </div>
   </div>
 </section>
 
 <section class="band-plum" id="story">
   <div class="wrap">
-    <span class="kicker" style="text-align:center;display:block;">Who's behind this</span>
-    <h2 class="section-title" style="margin:0 auto 24px;text-align:center;">My Name Is Sadie</h2>
+    <span class="kicker" style="text-align:center;display:block;">Meet Sadie</span>
+    <h2 class="section-title" style="margin:0 auto 24px;text-align:center;">The Story Behind Woven</h2>
     <div class="two-col" style="align-items:center;">
       <div class="col-img">
         <img src="assets/sadie-janes-white.jpg" alt="Sadie Janes, founder of Woven" style="border-radius:16px;">
       </div>
       <div class="note-card" style="margin:0;max-width:none;">
         <div class="body-copy">
-          <p>My name is Sadie Janes.</p>
-          <p>I started paying attention to sustainability long before this project existed. I became a vegetarian in fifth grade, and that early decision made me curious about how small personal choices can create larger environmental effects.</p>
-          <p>In ninth-grade biology, I researched fast fashion for a quarter project and kept returning to the subject in later research papers and assignments. At the end of my junior year, I spent nearly a month digging further into textile waste, secondhand clothing, clothing insecurity, and sustainable materials.</p>
-          <p>I wanted the final project to move beyond another research paper. Working with the Dorcas House gave me a chance to ask women what they wanted, listen to their answers, and use that information to create something tangible.</p>
-          <p>Woven grew from that process.</p>
+          <p>Hi! I'm Sadie Janes.</p>
+          <p>Sustainability became important to me at a young age. I became a vegetarian in fifth grade, and that early decision made me curious about how small personal choices can create larger environmental effects.</p>
+          <p>In ninth-grade biology, I researched fast fashion for a quarter project and I found myself returning to the subject in later research papers and assignments. I wanted to understand it more deeply. At the end of my junior year, I spent nearly a month digging further into textile waste, secondhand clothing, clothing insecurity, and sustainable materials.</p>
+          <p>I wanted my final project to move beyond another research paper. Working with Dorcas House gave me an opportunity to listen to women about what they wanted and use that information to create something tangible.</p>
+          <p>Woven grew from that experience.</p>
         </div>
         <div class="signature">— Sadie</div>
       </div>
@@ -396,11 +404,11 @@
       </div>
     </div>
     <div>
-      <span class="kicker">Current concept</span>
+      <span class="kicker">From Insight to Action</span>
       <h2 class="section-title">A Blouse Built From Their Answers</h2>
       <div class="body-copy" style="margin-top:18px;">
-        <p>The survey produced a clear starting point for the final design. The current concept combines a loose or flowy silhouette with a longer tunic-style length, a slip-on construction, and pockets.</p>
-        <p>The proposed production mix includes sizes from XS through XXL. Current color planning includes white, navy, and khaki or light brown. Every major design decision traces back to information collected from the women themselves.</p>
+        <p>The survey produced a clear starting point for the final design. The current concept combines a flowy silhouette with a longer tunic-style length, a slip-on construction, and pockets.</p>
+        <p>The proposed production mix offers sizes from XS to XXL with a versatile palette of white, navy, and khaki. Every choice from fit and function to color reflects what matters most to the women who will wear it.</p>
       </div>
       <div class="size-note">
         <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
@@ -411,12 +419,12 @@
 
 <section id="durability">
   <div class="wrap" style="max-width:760px;">
-    <span class="kicker">Built to last</span>
-    <h2 class="section-title">Designed to Stay in the Closet</h2>
+    <span class="kicker">Made to Last</span>
+    <h2 class="section-title">Thoughtfully Designed for a Longer Life</h2>
     <div class="body-copy" style="margin-top:18px;">
-      <p>Durability matters only when clothing continues to be worn. Research on garment durability increasingly emphasizes that longevity depends on more than fabric strength. Clothing also has to fit the wearer's lifestyle, preferences, climate, and daily needs.<sup>[2]</sup></p>
-      <p>That idea matches what emerged from the Dorcas House survey. The women wanted clothing for church, work, interviews, social events, travel, and ordinary days.</p>
-      <p style="font-family:'Lora',serif;font-style:italic;font-size:20px;color:var(--plum);">The goal is simple: make a blouse worth wearing again.</p>
+      <p>Durability matters. Research on garment longevity shows durability is about more than fabric strength. Clothing is kept and worn longer when it also fits the wearer's lifestyle, preferences, climate, and daily needs.<sup>[2]</sup></p>
+      <p>Our research with the women of Dorcas House reflected exactly that. With busy lives, balancing work, motherhood, and new beginnings, they wanted clothing versatile enough for church, work, interviews, social events, and just everyday life.</p>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:20px;color:var(--plum);">One blouse. More ways to wear it. More reasons to keep it.</p>
     </div>
   </div>
 </section>
@@ -426,10 +434,10 @@
 <section class="cta-final" id="reserve">
   <div class="wrap two-col">
     <div class="reserve-card">
-      <span class="kicker">Production planning is underway</span>
+      <span class="kicker">Be the First to Know</span>
       <h2 class="section-title">Reserve a Woven Blouse</h2>
       <div class="body-copy" style="margin-top:14px;">
-        <p>An email reservation helps determine interest while giving us a way to send updates about availability, sizing, colors, and timing.</p>
+        <p>Join our email list to show your interest in Woven and receive updates on availability, sizing, colors, and timing.</p>
       </div>
       <form class="email-form" id="final-form" style="margin-top:22px;">
         <input type="email" required placeholder="Enter your email address" aria-label="Email address">
