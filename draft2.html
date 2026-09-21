@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woven (Draft 2) — A Blouse Built With the Women Who'll Wear It</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/woven-logo.png">
+<style>
+  :root{
+    --flax:#F3F2E8;
+    --flax-deep:#DADFCD;
+    --plum:#313D24;
+    --plum-soft:#4C5B39;
+    --berry:#7E2542;
+    --berry-dark:#5F1930;
+    --sage:#707765;
+    --sage-mid:#A0A693;
+    --sage-pale:#DBE1CF;
+    --berry-lift:#E0A3B2;
+    --ink:#1B210E;
+    --ink-soft:#4A5542;
+    --ink-muted:#5F664A;
+    --cream:#FAFAF3;
+    --line:#C3CBB4;
+    --line-dark:rgba(251,247,239,0.22);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--flax);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Lora',serif;
+    font-weight:600;
+    line-height:1.2;
+    margin:0;
+    color:var(--ink);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  section{padding:88px 0;}
+  @media(max-width:720px){ section{padding:60px 0;} }
+
+  /* ---------- thread divider ---------- */
+  .thread{width:100%;height:22px;overflow:hidden;line-height:0;}
+  .thread svg{width:100%;height:22px;display:block;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,241,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  header .logo-mark img{height:38px;width:auto;border-radius:6px;}
+  nav.primary{display:flex;align-items:center;gap:28px;}
+  nav.primary a.navlink{
+    font-size:14.5px;letter-spacing:.01em;text-decoration:none;color:var(--ink);opacity:.75;
+  }
+  nav.primary a.navlink:hover{opacity:1;}
+  @media(max-width:640px){ nav.primary a.navlink{display:none;} }
+
+  .btn{
+    display:inline-block;
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:.01em;
+    padding:13px 28px;
+    border-radius:100px;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-clay{background:var(--berry);color:var(--cream);}
+  .btn-clay:hover{background:var(--berry-dark);transform:translateY(-1px);}
+  .btn-outline{background:transparent;color:var(--cream);border-color:var(--line-dark);}
+  .btn-outline:hover{background:rgba(251,247,239,0.1);}
+  .btn-outline-ink{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-outline-ink:hover{background:rgba(43,33,25,0.06);}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:64px;padding-bottom:70px;}
+  .hero .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:900px){ .hero .grid{grid-template-columns:1fr;gap:40px;} }
+  .eyebrow-plain{font-size:14.5px;color:var(--berry);font-weight:600;margin-bottom:14px;}
+  .hero h1{font-size:44px;letter-spacing:-.01em;}
+  @media(max-width:900px){ .hero h1{font-size:34px;} }
+  .hero p.lede{margin-top:20px;font-size:18.5px;color:var(--ink-soft);max-width:46ch;}
+  .hero-form{margin-top:30px;}
+  .hero-visual{position:relative;}
+  .hero-visual img{border-radius:18px;border:3px solid var(--sage-mid);box-shadow:0 20px 50px -22px rgba(43,33,25,.35);}
+  .hero-visual figcaption{
+    margin-top:10px;font-size:13.5px;color:var(--ink-muted);font-style:italic;
+  }
+  .fade-in{opacity:0;transform:translateY(14px);animation:fadeUp .7s ease forwards;}
+  .fade-in.d2{animation-delay:.12s;}
+  .fade-in.d3{animation-delay:.24s;}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion: reduce){
+    .fade-in{opacity:1;transform:none;animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- email form ---------- */
+  .email-form{display:flex;gap:10px;max-width:440px;flex-wrap:wrap;}
+  .email-form input[type=email]{
+    flex:1;min-width:200px;
+    padding:13px 18px;
+    border-radius:100px;
+    border:1px solid var(--line);
+    background:var(--cream);
+    font-family:'Work Sans',sans-serif;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .email-form input[type=email]:focus{outline:2px solid var(--plum-soft);outline-offset:1px;}
+  .email-note{font-size:13px;color:var(--ink-muted);margin-top:10px;}
+  .form-confirm{
+    display:none;align-items:center;gap:10px;
+    font-size:15.5px;color:var(--plum);font-weight:600;
+    padding:13px 4px;
+  }
+  .form-confirm svg{flex:none;}
+
+  .email-form.dark input[type=email]{background:rgba(251,247,239,0.92);border-color:transparent;}
+  .email-form.dark + .email-note{color:rgba(251,247,239,0.7);}
+
+  /* ---------- plum band ---------- */
+  .band-plum{background:var(--plum);color:var(--cream);}
+  .band-plum h2, .band-plum h3{color:var(--cream);}
+  .band-plum p{color:rgba(251,247,239,0.86);}
+
+  .band-flaxdeep{background:var(--flax-deep);}
+
+  .kicker{
+    font-family:'Lora',serif;font-style:italic;font-weight:500;
+    font-size:15.5px;color:var(--berry);margin-bottom:10px;display:block;
+  }
+  .band-plum .kicker{color:var(--berry-lift);}
+
+  h2.section-title{font-size:32px;max-width:20ch;}
+  @media(max-width:640px){ h2.section-title{font-size:27px;} }
+  .section-lede{font-size:18px;margin-top:16px;max-width:58ch;color:var(--ink-soft);}
+  .band-plum .section-lede{color:rgba(251,247,239,0.86);}
+
+  /* ---------- stat strip ---------- */
+  .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;}
+  @media(max-width:760px){ .stat-strip{grid-template-columns:1fr;gap:26px;} }
+  .stat{border-top:2px solid var(--berry);padding-top:16px;}
+  .band-plum .stat{border-top:2px solid var(--berry-lift);}
+  .stat .num{font-family:'Lora',serif;font-weight:700;font-size:40px;line-height:1;color:var(--ink);}
+  .band-plum .stat .num{color:var(--cream);}
+  .stat .label{margin-top:8px;font-size:15px;color:var(--ink-soft);}
+  .band-plum .stat .label{color:rgba(251,247,239,0.8);}
+
+  .body-copy p{margin:0 0 18px 0;max-width:64ch;}
+  .body-copy p:last-child{margin-bottom:0;}
+  .band-plum .body-copy p{color:rgba(251,247,239,0.86);}
+  /* ...but a cream card inside the plum band needs dark copy again, or the
+     text is cream on cream and vanishes. This is what hid Sadie's letter. */
+  .note-card .body-copy p,
+  .band-plum .note-card .body-copy p{color:var(--ink-soft);}
+
+  /* ---------- two column ---------- */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:860px){ .two-col{grid-template-columns:1fr;gap:32px;} }
+  .two-col img{border-radius:16px;}
+  .two-col.flip .col-img{order:2;}
+  @media(max-width:860px){ .two-col.flip .col-img{order:0;} }
+
+  /* ---------- pull quotes ---------- */
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;}
+  @media(max-width:820px){ .quote-grid{grid-template-columns:1fr;} }
+  blockquote{
+    margin:0;background:var(--sage-pale);border-radius:14px;padding:26px 24px;
+    border:1px solid var(--sage-mid);
+  }
+  blockquote::before{
+    content:"\201C";display:block;font-family:'Lora',serif;font-size:46px;
+    line-height:.7;color:var(--sage);margin-bottom:10px;
+  }
+  blockquote p{
+    font-family:'Lora',serif;font-style:italic;font-size:18px;color:var(--plum);margin:0;
+  }
+  blockquote cite{display:block;margin-top:12px;font-family:'Work Sans',sans-serif;font-style:normal;font-size:13.5px;color:var(--ink-muted);}
+
+  /* ---------- founder note ---------- */
+  .note-card{
+    background:var(--cream);border:1px solid var(--line);border-radius:20px;
+    padding:44px;max-width:760px;margin:40px auto 0;position:relative;
+  }
+  @media(max-width:640px){ .note-card{padding:30px 24px;} }
+  .note-card .signature{
+    margin-top:26px;font-family:'Lora',serif;font-style:italic;font-size:19px;color:var(--plum);
+  }
+
+  /* ---------- color swatch section ---------- */
+  .swatch-figure{background:var(--cream);border-radius:16px;padding:14px;border:1px solid var(--line);}
+  .swatch-figure img{border-radius:8px;}
+  .size-callout{font-family:'Lora',serif;font-style:italic;font-size:17px;color:var(--sage);margin:14px 0 0;}
+  .size-note{
+    margin-top:20px;display:inline-flex;gap:10px;flex-wrap:wrap;
+  }
+  .size-pill{
+    font-size:13.5px;padding:7px 15px;border-radius:100px;border:1px solid var(--line);color:var(--ink-soft);background:var(--flax);
+  }
+
+  /* ---------- final CTA ---------- */
+  .cta-final{background:var(--flax-deep);}
+  .cta-final .two-col{align-items:center;}
+  .reserve-card{
+    background:var(--cream);border-radius:20px;padding:40px;border:1px solid var(--line);
+  }
+  @media(max-width:640px){ .reserve-card{padding:28px 22px;} }
+
+  /* ---------- references ---------- */
+  .refs{font-size:14px;color:var(--ink-muted);}
+  .refs ol{padding-left:20px;margin:16px 0 0 0;}
+  .refs li{margin-bottom:8px;}
+  .refs a{color:var(--ink-muted);}
+
+  footer{
+    background:var(--plum);color:rgba(251,247,239,0.7);
+    padding:36px 0;font-size:14px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  footer img{height:26px;opacity:.85;border-radius:6px;}
+
+  ::selection{background:var(--berry);color:var(--cream);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#hero" class="logo-mark"><img src="assets/woven-logo.png" alt="Woven"></a>
+    <nav class="primary">
+      <a class="navlink" href="#the-design">The Design</a>
+      <a class="navlink" href="#story">Our Story</a>
+      <a class="navlink" href="#references">Research</a>
+      <a class="btn btn-clay" href="#reserve">Reserve Your Blouse</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow-plain fade-in">Thoughtful Clothing, Made with Purpose</span>
+      <h1 class="fade-in d2">Clothing Designed With the Women Who Will Wear It</h1>
+      <p class="lede fade-in d3">Woven is a sustainable blouse project created in partnership with women at Little Rock's Dorcas House. Their voices shape every detail from fit, coverage, color, comfort, and sizing, creating a blouse that builds confidence.</p>
+
+      <form class="hero-form email-form fade-in d3" id="hero-form">
+        <input type="email" required placeholder="Enter your email address" aria-label="Email address">
+        <button type="submit" class="btn btn-clay">Reserve Your Blouse</button>
+      </form>
+      <div class="form-confirm" id="hero-confirm">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#48213A"/><path d="M6 10.5L8.5 13L14 7" stroke="#FBF7EF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        You're on the list. We'll email you as sizing and colors are finalized.
+      </div>
+      <p class="email-note">Enter your email address to reserve a Woven blouse and receive updates on sizing, colors, availability, and production.</p>
+    </div>
+    <figure class="hero-visual">
+      <img src="assets/hemp-blouse-concept.jpg" alt="Early concept photography for the Woven hemp blouse, shown from four angles">
+      <figcaption>Design concept inspired by feedback from the women of Dorcas House. Final samples are currently in production.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="thread"><svg viewBox="0 0 400 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 11 Q 10 2, 20 11 T 40 11 T 60 11 T 80 11 T 100 11 T 120 11 T 140 11 T 160 11 T 180 11 T 200 11 T 220 11 T 240 11 T 260 11 T 280 11 T 300 11 T 320 11 T 340 11 T 360 11 T 380 11 T 400 11" stroke="#A0A693" stroke-width="1.5" fill="none"/></svg></div>
+
+<section class="band-plum" id="the-problem">
+  <div class="wrap">
+    <span class="kicker">Why this exists</span>
+    <h2 class="section-title">Fast Fashion Creates a Clothing Problem</h2>
+    <p class="section-lede">The fashion industry produces far more clothing than people ultimately use. As production has grown, so has textile waste. Textile production has nearly doubled since 2000, while textile waste in the United States has risen dramatically.<sup>[1]</sup> Much of that clothing never returns to meaningful use.</p>
+
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="num">92M Tons</div>
+        <div class="label">Of textile waste are generated globally.</div>
+      </div>
+      <div class="stat">
+        <div class="num">85%</div>
+        <div class="label">Of discarded textiles in the United States are not recycled or donated.<sup>[1]</sup></div>
+      </div>
+      <div class="stat">
+        <div class="num">2.5–5B</div>
+        <div class="label">Unsold garments were estimated to have been produced in 2023 alone.</div>
+      </div>
+    </div>
+
+    <div class="body-copy" style="margin-top:40px;">
+      <p>The problem extends beyond waste. Clothing is also a basic expense that becomes difficult to prioritize when families are already balancing housing, food, transportation, healthcare, and childcare.</p>
+      <p>In Pulaski County, 15% of residents live below the poverty line, while another 27% fall into the ALICE category: Asset Limited, Income Constrained, Employed.<sup>[3]</sup> Dorcas House works directly with women navigating many of these challenges.</p>
+    </div>
+  </div>
+</section>
+
+<section id="the-design">
+  <div class="wrap">
+    <span class="kicker">Our Research</span>
+    <h2 class="section-title">Designed With the Women Who Will Wear It</h2>
+    <p class="section-lede">Nineteen women at Dorcas House shared what they wanted most in a blouse. Their feedback directly shaped our design.</p>
+
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="num">84%</div>
+        <div class="label">Preferred a slip-on design, a blouse they could pull over their head rather than a button-front style.</div>
+      </div>
+      <div class="stat">
+        <div class="num">79%</div>
+        <div class="label">Wanted pockets, one of the clearest preferences in the entire survey.</div>
+      </div>
+      <div class="stat">
+        <div class="num">63%</div>
+        <div class="label">Preferred a flowy, relaxed fit over a structured or boxy silhouette.</div>
+      </div>
+    </div>
+
+    <div class="body-copy" style="margin-top:40px;">
+      <p>Their feedback helped shape the details too. Fifty-eight percent preferred a longer, tunic-style blouse, while 63% preferred short sleeves. Color preferences were nearly evenly divided among neutrals, earth tones, and shades of blue, green, and navy.</p>
+      <p>The result is a blouse designed to work for different women, different body types, and different preferences, with a focus on inclusive sizing from XS through XXL.</p>
+    </div>
+  </div>
+</section>
+
+<div class="thread"><svg viewBox="0 0 400 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 11 Q 10 20, 20 11 T 40 11 T 60 11 T 80 11 T 100 11 T 120 11 T 140 11 T 160 11 T 180 11 T 200 11 T 220 11 T 240 11 T 260 11 T 280 11 T 300 11 T 320 11 T 340 11 T 360 11 T 380 11 T 400 11" stroke="#8E9880" stroke-width="1.5" fill="none"/></svg></div>
+
+<section class="band-flaxdeep" id="occasions">
+  <div class="wrap two-col">
+    <div>
+      <span class="kicker">For Real Life</span>
+      <h2 class="section-title">One Blouse, Many Places</h2>
+      <div class="body-copy" style="margin-top:18px;">
+        <p>The women were also asked where they hoped to wear the blouse. Church was the most common answer, but their responses went beyond that: job interviews, work, birthday parties, community events, casual outings, traveling, and everyday life. Several simply said "anywhere" or "everywhere."</p>
+        <p>Their answers made it clear: they wanted a blouse that could move with them through everyday life.</p>
+        <p>We also asked the women how having the right clothing makes them feel. Their answers spoke to something deeper than simply getting dressed.</p>
+      </div>
+      <div class="quote-grid">
+        <blockquote><p>"Comfortable in my skin."</p><cite>Dorcas House survey resident</cite></blockquote>
+        <blockquote><p>"It was almost as though I could wear it all day."</p><cite>Dorcas House survey resident</cite></blockquote>
+        <blockquote><p>"I felt comfortable and looked nice."</p><cite>Dorcas House survey resident</cite></blockquote>
+      </div>
+    </div>
+    <div class="col-img">
+      <img src="assets/three-women.jpg" alt="Three women outdoors in confident, everyday professional clothing">
+    </div>
+  </div>
+</section>
+
+<section id="material">
+  <div class="wrap" style="max-width:760px;">
+    <span class="kicker">The Blend Matters</span>
+    <h2 class="section-title">Why Hemp Makes Sense</h2>
+    <div class="body-copy" style="margin-top:18px;">
+      <p>What clothing is made from matters, both in how it feels and how long it lasts. Research published in <em>Materials</em> found that hemp-linen blend fabrics can provide durability along with strong air permeability and moisture management. Hemp fibers are also breathable and biodegradable.<sup>[5]</sup></p>
+      <p>For Woven, hemp and hemp blends are preferred whenever practical. They allow us to create clothing that lasts longer, feels comfortable, and avoids some of the waste associated with disposable fashion. Hemp helps tackle textile waste from both ends. Its durability means it can be worn longer and even passed down rather than quickly replaced. And if it does reach a landfill, hemp is biodegradable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-plum" id="story">
+  <div class="wrap">
+    <span class="kicker" style="text-align:center;display:block;">Meet Sadie</span>
+    <h2 class="section-title" style="margin:0 auto 24px;text-align:center;">The Story Behind Woven</h2>
+    <div class="two-col" style="align-items:center;">
+      <div class="col-img">
+        <img src="assets/sadie-janes-white.jpg" alt="Sadie Janes, founder of Woven" style="border-radius:16px;">
+      </div>
+      <div class="note-card" style="margin:0;max-width:none;">
+        <div class="body-copy">
+          <p>Hi! I'm Sadie Janes.</p>
+          <p>Sustainability became important to me at a young age. I became a vegetarian in fifth grade, and that early decision made me curious about how small personal choices can create larger environmental effects.</p>
+          <p>In ninth-grade biology, I researched fast fashion for a quarter project and I found myself returning to the subject in later research papers and assignments. At the end of my junior year, I wanted to understand it more deeply. I spent nearly a month digging further into textile waste, secondhand clothing, clothing insecurity, and sustainable materials.</p>
+          <p>I wanted my final project to move beyond another research paper. Working with Dorcas House gave me an opportunity to listen to women about what they wanted and use that information to create something tangible.</p>
+          <p>Woven grew from that experience.</p>
+        </div>
+        <div class="signature">— Sadie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-flaxdeep" id="concept">
+  <div class="wrap two-col flip">
+    <div class="col-img">
+      <div class="swatch-figure">
+        <img src="assets/colour-options.jpg" alt="Three current color options for the Woven blouse: white, navy, and khaki">
+      </div>
+    </div>
+    <div>
+      <span class="kicker">From Insight to Action</span>
+      <h2 class="section-title">A Blouse Built From Answers</h2>
+      <div class="body-copy" style="margin-top:18px;">
+        <p>The survey produced a clear starting point for the final design. The current concept combines a flowy silhouette with a longer tunic-style length, a slip-on construction, and pockets.</p>
+        <p>The proposed production mix offers sizes from XS to XXL with a versatile palette of white, navy, and khaki. Every choice from fit and function to color reflects what matters most to the women who will wear it.</p>
+      </div>
+      <div class="size-note">
+        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+      </div>
+      <p class="size-callout">Inclusive sizing creates confidence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="durability">
+  <div class="wrap" style="max-width:760px;">
+    <span class="kicker">Made to Last</span>
+    <h2 class="section-title">Thoughtfully Designed for a Longer Life</h2>
+    <div class="body-copy" style="margin-top:18px;">
+      <p>Durability matters. Research on garment longevity shows durability is about more than fabric strength. Clothing is kept and worn longer when it also fits the wearer's lifestyle, preferences, climate, and daily needs.<sup>[2]</sup></p>
+      <p>Our research with the women of Dorcas House reflected exactly that. With busy lives, balancing work, motherhood, and new beginnings, they wanted clothing versatile enough for church, work, interviews, social events, and just everyday life.</p>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:20px;color:var(--plum);">One blouse. More ways to wear it. More reasons to keep it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="thread"><svg viewBox="0 0 400 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 11 Q 10 2, 20 11 T 40 11 T 60 11 T 80 11 T 100 11 T 120 11 T 140 11 T 160 11 T 180 11 T 200 11 T 220 11 T 240 11 T 260 11 T 280 11 T 300 11 T 320 11 T 340 11 T 360 11 T 380 11 T 400 11" stroke="#A0A693" stroke-width="1.5" fill="none"/></svg></div>
+
+<section class="cta-final" id="reserve">
+  <div class="wrap two-col">
+    <div class="reserve-card">
+      <span class="kicker">Be the First to Know</span>
+      <h2 class="section-title">Reserve a Woven Blouse</h2>
+      <div class="body-copy" style="margin-top:14px;">
+        <p>Join our email list to show your interest in Woven and receive updates on availability, sizing, colors, and timing.</p>
+      </div>
+      <form class="email-form" id="final-form" style="margin-top:22px;">
+        <input type="email" required placeholder="Enter your email address" aria-label="Email address">
+        <button type="submit" class="btn btn-clay">Reserve My Blouse</button>
+      </form>
+      <div class="form-confirm" id="final-confirm">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#48213A"/><path d="M6 10.5L8.5 13L14 7" stroke="#FBF7EF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        You're on the list. Project updates only.
+      </div>
+      <p class="email-note">Project updates only.</p>
+    </div>
+    <div class="col-img">
+      <img src="assets/sadie-janes-portrait.jpg" alt="Sadie Janes, founder of Woven" style="border-radius:16px;">
+    </div>
+  </div>
+</section>
+
+<section class="refs" id="references">
+  <div class="wrap">
+    <h3 style="font-size:16px;">Research Sources</h3>
+    <ol>
+      <li>Textiles in a Circular Economy: An Assessment of the Current Landscape, Challenges, and Opportunities in the United States. <em>Frontiers in Sustainability</em>, 2022.</li>
+      <li>Understanding Garment Durability Through Local Lenses: A Participatory Study With Communities Across the Globe. <em>Scientific Reports</em>, 2025.</li>
+      <li>Heart of Arkansas United Way. ALICE in Arkansas.</li>
+      <li>Union Rescue Mission. Dorcas House.</li>
+      <li>Effect of Weave and Weft Type on Mechanical and Comfort Properties of Hemp–Linen Fabrics. <em>Materials</em>, 2024.</li>
+    </ol>
+    <p style="margin-top:14px;">Dorcas House Blouse Survey: 19 respondents, August 2026.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/woven-logo.png" alt="Woven" style="filter:brightness(0) invert(1) opacity(0.85);">
+    <span>&copy; 2026 Woven. A project made with Dorcas House.</span>
+  </div>
+</footer>
+
+<script>
+function wireForm(formId, confirmId){
+  var form = document.getElementById(formId);
+  var confirmEl = document.getElementById(confirmId);
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.style.display = 'none';
+    confirmEl.style.display = 'flex';
+  });
+}
+wireForm('hero-form','hero-confirm');
+wireForm('final-form','final-confirm');
+</script>
+
+</body>
+</html>
