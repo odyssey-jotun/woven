@@ -10,21 +10,23 @@
 <link rel="icon" href="assets/woven-logo.png">
 <style>
   :root{
-    --flax:#F7F1E6;
-    --flax-deep:#ECDFBE;
+    --flax:#F3F2E8;
+    --flax-deep:#DADFCD;
     --plum:#48213A;
     --plum-soft:#6C3552;
-    --berry:#9B3A55;
-    --berry-dark:#84304A;
+    --berry:#7E2542;
+    --berry-dark:#5F1930;
     --sage:#707765;
     --sage-mid:#A0A693;
     --sage-pale:#DBE1CF;
     --clay:#BD5B2C;
     --clay-dark:#9C4A23;
     --clay-deeper:#8E4220;
-    --ink:#2B2119;
-    --cream:#FBF7EF;
-    --line:#DACBA3;
+    --ink:#1B210E;
+    --ink-soft:#4A5542;
+    --ink-muted:#5F664A;
+    --cream:#FAFAF3;
+    --line:#C3CBB4;
     --line-dark:rgba(251,247,239,0.22);
     --maxw:1120px;
   }
@@ -102,12 +104,12 @@
   .eyebrow-plain{font-size:14.5px;color:var(--berry);font-weight:600;margin-bottom:14px;}
   .hero h1{font-size:44px;letter-spacing:-.01em;}
   @media(max-width:900px){ .hero h1{font-size:34px;} }
-  .hero p.lede{margin-top:20px;font-size:18.5px;color:#4a3c30;max-width:46ch;}
+  .hero p.lede{margin-top:20px;font-size:18.5px;color:var(--ink-soft);max-width:46ch;}
   .hero-form{margin-top:30px;}
   .hero-visual{position:relative;}
   .hero-visual img{border-radius:18px;border:3px solid var(--sage-mid);box-shadow:0 20px 50px -22px rgba(43,33,25,.35);}
   .hero-visual figcaption{
-    margin-top:10px;font-size:13.5px;color:#6b5c4b;font-style:italic;
+    margin-top:10px;font-size:13.5px;color:var(--ink-muted);font-style:italic;
   }
   .fade-in{opacity:0;transform:translateY(14px);animation:fadeUp .7s ease forwards;}
   .fade-in.d2{animation-delay:.12s;}
@@ -131,7 +133,7 @@
     color:var(--ink);
   }
   .email-form input[type=email]:focus{outline:2px solid var(--plum-soft);outline-offset:1px;}
-  .email-note{font-size:13px;color:#6b5c4b;margin-top:10px;}
+  .email-note{font-size:13px;color:var(--ink-muted);margin-top:10px;}
   .form-confirm{
     display:none;align-items:center;gap:10px;
     font-size:15.5px;color:var(--plum);font-weight:600;
@@ -157,7 +159,7 @@
 
   h2.section-title{font-size:32px;max-width:20ch;}
   @media(max-width:640px){ h2.section-title{font-size:27px;} }
-  .section-lede{font-size:18px;margin-top:16px;max-width:58ch;color:#4a3c30;}
+  .section-lede{font-size:18px;margin-top:16px;max-width:58ch;color:var(--ink-soft);}
   .band-plum .section-lede{color:rgba(251,247,239,0.86);}
 
   /* ---------- stat strip ---------- */
@@ -167,7 +169,7 @@
   .band-plum .stat{border-top:2px solid #E3A87C;}
   .stat .num{font-family:'Lora',serif;font-weight:700;font-size:40px;line-height:1;color:var(--ink);}
   .band-plum .stat .num{color:var(--cream);}
-  .stat .label{margin-top:8px;font-size:15px;color:#4a3c30;}
+  .stat .label{margin-top:8px;font-size:15px;color:var(--ink-soft);}
   .band-plum .stat .label{color:rgba(251,247,239,0.8);}
 
   .body-copy p{margin:0 0 18px 0;max-width:64ch;}
@@ -176,7 +178,7 @@
   /* ...but a cream card inside the plum band needs dark copy again, or the
      text is cream on cream and vanishes. This is what hid Sadie's letter. */
   .note-card .body-copy p,
-  .band-plum .note-card .body-copy p{color:#4a3c30;}
+  .band-plum .note-card .body-copy p{color:var(--ink-soft);}
 
   /* ---------- two column ---------- */
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
@@ -199,7 +201,7 @@
   blockquote p{
     font-family:'Lora',serif;font-style:italic;font-size:18px;color:var(--plum);margin:0;
   }
-  blockquote cite{display:block;margin-top:12px;font-family:'Work Sans',sans-serif;font-style:normal;font-size:13.5px;color:#6b5c4b;}
+  blockquote cite{display:block;margin-top:12px;font-family:'Work Sans',sans-serif;font-style:normal;font-size:13.5px;color:var(--ink-muted);}
 
   /* ---------- founder note ---------- */
   .note-card{
@@ -219,7 +221,7 @@
     margin-top:20px;display:inline-flex;gap:10px;flex-wrap:wrap;
   }
   .size-pill{
-    font-size:13.5px;padding:7px 15px;border-radius:100px;border:1px solid var(--line);color:#4a3c30;background:var(--flax);
+    font-size:13.5px;padding:7px 15px;border-radius:100px;border:1px solid var(--line);color:var(--ink-soft);background:var(--flax);
   }
 
   /* ---------- final CTA ---------- */
@@ -231,10 +233,10 @@
   @media(max-width:640px){ .reserve-card{padding:28px 22px;} }
 
   /* ---------- references ---------- */
-  .refs{font-size:14px;color:#6b5c4b;}
+  .refs{font-size:14px;color:var(--ink-muted);}
   .refs ol{padding-left:20px;margin:16px 0 0 0;}
   .refs li{margin-bottom:8px;}
-  .refs a{color:#6b5c4b;}
+  .refs a{color:var(--ink-muted);}
 
   footer{
     background:var(--plum);color:rgba(251,247,239,0.7);
