@@ -101,4 +101,4 @@ footer{background:var(--plum);color:rgba(251,247,239,0.7);padding:36px 0;font-si
 footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
 footer img{height:26px;border-radius:6px;filter:brightness(0) invert(1) opacity(0.85);}
 footer a{color:rgba(251,247,239,0.85);}
-::selection{background:#BD5B2C;color:var(--cream);}
+::selection{background:var(--berry);color:var(--cream);}
