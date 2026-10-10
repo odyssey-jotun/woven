@@ -262,6 +262,21 @@
   .dh-card p{margin:0 0 12px;color:var(--ink-soft);font-size:16px;max-width:72ch;}
   .dh-card p:last-child{margin-bottom:0;}
 
+  /* ---------- latest blog update ---------- */
+  .latest{padding:64px 0;}
+  .latest .wrap{max-width:860px;}
+  .latest-card{
+    display:block;text-decoration:none;margin-top:22px;
+    background:rgba(251,247,239,0.07);border:1px solid var(--line-dark);
+    border-radius:16px;padding:24px 28px;transition:border-color .15s ease;
+  }
+  .latest-card:hover{border-color:rgba(251,247,239,0.6);}
+  .latest-card .post-date{display:block;font-size:14px;color:rgba(251,247,239,0.7);margin-bottom:6px;}
+  .latest-card h3{font-size:22px;}
+  .latest-card p{margin:8px 0 0;font-size:16px;}
+  .latest-card .read-more{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;color:#E3A87C;}
+  .latest .all-posts{display:inline-block;margin-top:18px;font-size:15px;color:var(--cream);}
+
 </style>
 </head>
 <body>
@@ -273,6 +288,7 @@
       <a class="navlink" href="#the-design">The Design</a>
       <a class="navlink" href="#story">Our Story</a>
       <a class="navlink" href="#references">Research</a>
+      <a class="navlink" href="blog/">Blog</a>
       <a class="btn btn-clay" href="#reserve">Reserve Your Blouse</a>
     </nav>
   </div>
@@ -462,6 +478,19 @@
   </div>
 </section>
 
+<section class="band-plum latest" id="updates">
+  <div class="wrap">
+    <h2 class="section-title">Project Updates</h2>
+    <a class="latest-card" href="blog/samples-on-the-way/">
+      <span class="post-date">October 9, 2026</span>
+      <h3>Our Blouse Samples Are on the Way</h3>
+      <p>The first Woven samples are finished and shipping to us overnight, plus some good news from our production partner.</p>
+      <span class="read-more">Read the update</span>
+    </a>
+    <a class="all-posts" href="blog/">See all blog posts</a>
+  </div>
+</section>
+
 <div class="thread"><svg viewBox="0 0 400 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 11 Q 10 2, 20 11 T 40 11 T 60 11 T 80 11 T 100 11 T 120 11 T 140 11 T 160 11 T 180 11 T 200 11 T 220 11 T 240 11 T 260 11 T 280 11 T 300 11 T 320 11 T 340 11 T 360 11 T 380 11 T 400 11" stroke="#DACBA3" stroke-width="1.5" fill="none"/></svg></div>
 
 <section class="cta-final" id="reserve">
@@ -505,7 +534,7 @@
 <footer>
   <div class="wrap">
     <img src="assets/woven-logo.png" alt="Woven" style="filter:brightness(0) invert(1) opacity(0.85);">
-    <span>&copy; 2026 Woven. A project made with Dorcas House.</span>
+    <span><a href="blog/" style="color:rgba(251,247,239,0.85);margin-right:18px;">Blog</a>&copy; 2026 Woven. A project made with Dorcas House.</span>
   </div>
 </footer>
 

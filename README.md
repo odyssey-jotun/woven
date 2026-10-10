@@ -19,6 +19,9 @@ works, online or offline.
 ```
 index.html          the live page: text, layout and styling
 draft2.html         draft 2, the same page in the olive palette
+blog/               the blog: index.html lists posts, one folder per post
+  blog.css                  shared styles for every blog page
+  samples-on-the-way/       first post (October 9, 2026)
 assets/             the images
   woven-logo.png            the Woven wordmark
   three-women.jpg           opening photograph
@@ -58,3 +61,8 @@ Mission, which serves roughly 50 women in residential recovery programs.
 Survey conducted August 2026 with 19 Dorcas House residents. All published
 figures are aggregate. No names, raw responses or identifying details appear on
 the site.
+
+**New blog post.** Copy `blog/samples-on-the-way/` to a new folder named for the
+post, change the date, title and text inside it, then add a card for it at the
+top of the list in `blog/index.html`. Point the "Project Updates" card in
+`index.html` at the newest post.
